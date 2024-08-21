@@ -1,8 +1,8 @@
 ---
 title: Linux常用命令
 date: 2024-08-20T14:00:11+08:00
-author: yuan
-avatar: /me/yy.jpg
+#author: yuan
+#avatar: /me/yy.jpg
 cover: Linux命令.jpg
 images:
   - Linux命令.jpg
