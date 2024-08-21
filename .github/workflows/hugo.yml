@@ -55,7 +55,8 @@ jobs:
             -e production
             --cleanDestinationDir \
             --gc \
-            --minify \
+            --minify
+            # \
     
 #            --config hugo.github-pages-preview.toml
       - name: Upload artifact
