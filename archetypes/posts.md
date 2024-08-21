@@ -5,7 +5,7 @@ lastmod: {{ .Date }}
 author: wantflying
 # avatar: /img/author.jpg
 authorlink: https://github.com/wantflying
-cover: /img/cover.jpg
+cover: img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
