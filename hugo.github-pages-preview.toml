@@ -9,9 +9,9 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
-# [services]
-# [services.disqus]
-# shortname = "yuan"
+[services]
+  [services.disqus]
+    shortname = 'xibeifeng1024'
 # [services.googleAnalytics]
 # ID = "G-K6V0YY3HWS"
 
