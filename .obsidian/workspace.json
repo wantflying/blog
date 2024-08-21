@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
+                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
+                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
+                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md"
+                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md"
               }
             }
           }
@@ -148,8 +148,10 @@
   },
   "active": "ebf9fdc8784bf1e8",
   "lastOpenFiles": [
-    "content/posts/Linux命令/index.md",
     "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
+    "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
+    "content/posts/2024y8m21day20h36m35s",
+    "content/posts/Linux命令/index.md",
     "content/posts/2024y8m21day18h35m54s",
     "themes/dream/theme.toml",
     "themes/dream/tailwind.config.js",
@@ -159,7 +161,6 @@
     "themes/dream/static/css/output.css",
     "themes/dream/static/js",
     "themes/dream/static/css",
-    "themes/dream/static",
     "themes/dream/images/tn.png",
     "themes/dream/images/screenshot.png",
     "themes/dream/docs/public/images/zen-mode.png",
@@ -191,7 +192,6 @@
     "README.md",
     "content/posts/2024m8d21h14m49s47/2024m8d21h14m49s47.md",
     "content/posts/2024m8d21h14m45s27.md",
-    "obs_sctipts/NewBlog.js.md",
-    "obs_sctipts/未命名.md"
+    "obs_sctipts/NewBlog.js.md"
   ]
 }
