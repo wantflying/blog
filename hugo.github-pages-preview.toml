@@ -70,7 +70,8 @@ showPrevNextPost = true
 [params.advanced]
 customCSS = ["css/custom.css"]
 # customJS = []
-
+[params.busuanzi]
+enable = true
 [params.experimental]
 jsDate = true
 jsDateFormat = "yyyy年MM月dd日"
