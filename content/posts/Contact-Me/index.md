@@ -3,9 +3,9 @@ title: 我的博客
 date: 2024-08-20T14:21:26+08:00
 #author: yuan
 #avatar: /me/yy.jpg
-#cover: Contact-Me.jpg
-#images:
-#  - Contact-Me.jpg
+cover: contact.jpg
+images:
+  - contact.jpg
 categories:
   - 开源
 tags:
