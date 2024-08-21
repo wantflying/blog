@@ -52,10 +52,12 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           hugo \
+            -e production
             --cleanDestinationDir \
             --gc \
             --minify \
-            --config hugo.github-pages-preview.toml
+    
+#            --config hugo.github-pages-preview.toml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
