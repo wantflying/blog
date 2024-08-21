@@ -55,10 +55,8 @@ jobs:
             -e production
             --cleanDestinationDir \
             --gc \
-            --minify
-            # \
-    
-#            --config hugo.github-pages-preview.toml
+            --minify \
+            --config hugo.github-pages-preview.toml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
