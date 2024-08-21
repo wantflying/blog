@@ -72,6 +72,9 @@ showSummaryCoverInPost = true
 showPrevNextPost = true
 # hasTwitterEmbed = true
 
+[params.busuanzi]
+enable = true
+
 [params.navItems]
 github = { href = "https://github.com/wantflying", target = "_blank", icon = "logo-github", title = "GitHub" }
 
