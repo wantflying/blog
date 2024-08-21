@@ -16,6 +16,10 @@ tags:
   - 运维操作
   - Linux Lang
 ---
-
 df -h 查看磁盘分区 \
-du -h --max-depth=1 查看当前各个文件夹占用大小
+du -h --max-depth=1 查看当前各个文件夹占用大小 \
+ps -ef |grep  查看进程 \
+top 查看进程内存 \
+lsblk 查看磁盘分布 \
+iotop 查看磁盘读写情况 \
+

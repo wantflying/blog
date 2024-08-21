@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "d532c0755fc19918",
+    "type": "split",
+    "children": [
+      {
+        "id": "518942deb83c837f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebf9fdc8784bf1e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/Linux命令/index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dfd43fdaf84ebc0e",
+    "type": "split",
+    "children": [
+      {
+        "id": "815a6c0ddfd05906",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5625e4ab935c5cc7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "04a0fcffac2887dd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "41c07b29cd10a874",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "15baa6e213604ea0",
+    "type": "split",
+    "children": [
+      {
+        "id": "3ab152c8eb32a591",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58889def43e21a61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/posts/Linux命令/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "60c07c430c028857",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/posts/Linux命令/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d1764c30a7467d5a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e7cd0e221659071f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/posts/Linux命令/index.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "ebf9fdc8784bf1e8",
+  "lastOpenFiles": [
+    "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
+    "content/posts/2024y8m21day18h35m54s",
+    "themes/dream/theme.toml",
+    "themes/dream/tailwind.config.js",
+    "themes/dream/static/js/search.js",
+    "themes/dream/static/js/main.js",
+    "themes/dream/static/js/grid.js",
+    "themes/dream/static/css/output.css",
+    "themes/dream/static/js",
+    "themes/dream/static/css",
+    "themes/dream/static",
+    "themes/dream/images/tn.png",
+    "themes/dream/images/screenshot.png",
+    "themes/dream/docs/public/images/zen-mode.png",
+    "themes/dream/docs/pages/search.md",
+    "themes/dream/docs/pages/post-page.md",
+    "themes/dream/docs/pages/i18n.md",
+    "themes/dream/docs/pages/decap-cms.md",
+    "themes/dream/docs/pages/custom-archives-header.md",
+    "themes/dream/docs/pages/about-page.md",
+    "themes/dream/docs/pages/CHANGELOG.md",
+    "themes/dream/docs/NOTE.md",
+    "themes/dream/assets/images/default4.jpg",
+    "themes/dream/assets/images/default3.jpg",
+    "themes/dream/assets/images/default2.jpg",
+    "themes/dream/assets/images/default1.jpg",
+    "themes/dream/archetypes/posts.md",
+    "themes/dream/archetypes/about.md",
+    "themes/dream/README.md",
+    "content/posts/2024y8m21day15h44m36s/2022222.md",
+    "content/posts/2024y8m21day15h44m36s/2024y8m21day15h44m36s.md",
+    "content/posts/2024y8m21day15h44m36s/index.md",
+    "public/img/IMG_1045.JPG",
+    "static/img/IMG_1045.JPG",
+    "content/posts/2024y8m21day15h38m1s/2024y8m21day15h38m1s.md",
+    "content/posts/2024y8m21day15h36m47s/2024y8m21day15h36m47s.md",
+    "archetypes/default.md",
+    "archetypes/posts.md",
+    "content/posts/2024y8m21d14h51m13s/2024y8m21d14h51m13s.md",
+    "README.md",
+    "content/posts/Linux命令/index.md",
+    "content/posts/2024m8d21h14m49s47/2024m8d21h14m49s47.md",
+    "content/posts/2024m8d21h14m45s27.md",
+    "obs_sctipts/NewBlog.js.md",
+    "obs_sctipts/未命名.md"
+  ]
+}
