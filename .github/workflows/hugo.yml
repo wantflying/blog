@@ -42,7 +42,7 @@ jobs:
       - name: Clone Dream theme
         run: |
           cd themes
-          git clone https://github.com/wantflying/hugo-theme-dream dream
+          git clone https://github.com/wantflying/dream dream
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
