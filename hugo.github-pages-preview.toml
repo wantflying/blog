@@ -1,7 +1,7 @@
 baseURL = "https://wantflying.github.io/blog"
 defaultContentLanguage = "zh"
 languageCode = "zh-Hans"
-title = "yuan 的博客"
+title = "yuan's Blog"
 theme = "dream"
 
 enableGitInfo = true
@@ -30,10 +30,10 @@ darkTheme = "forest"
 
 images = ["me/background.jpg"]
 
-author = "yuan"
+author = "wantflying"
 description = "The life record of yuan is presented here."
 avatar = "me/yy.jpg"
-headerTitle = "yuan 的博客"
+headerTitle = "yuan' Blog"
 motto = "命运早已注定,你我都是牛马。"
 
 # footerBottomText = ""
