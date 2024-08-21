@@ -3,6 +3,9 @@ title: Linux常用命令
 date: 2024-08-20T14:00:11+08:00
 #author: yuan
 #avatar: /me/yy.jpg
+author: wantflying
+# avatar: /img/author.jpg
+authorlink: https://github.com/wantflying
 cover: Linux命令.jpg
 images:
   - Linux命令.jpg

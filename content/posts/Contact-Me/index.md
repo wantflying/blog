@@ -3,6 +3,9 @@ title: 我的博客
 date: 2024-08-20T14:21:26+08:00
 #author: yuan
 #avatar: /me/yy.jpg
+author: wantflying
+# avatar: /img/author.jpg
+authorlink: https://github.com/wantflying
 cover: contact.jpg
 images:
   - contact.jpg
