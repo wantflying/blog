@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
+                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
+                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
+                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md"
+                "file": "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "ebf9fdc8784bf1e8",
   "lastOpenFiles": [
+    "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
     "static/img/k8s.png",
     "static/img/img.png",
     "public/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s/index.html",
@@ -162,7 +163,6 @@
     "public/img/k8s.png",
     "static/img/k.png",
     "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
-    "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
     "content/posts/2024y8m21day20h36m35s",
     "content/posts/Linux命令/index.md",
     "themes/dream/images/tn.png",
@@ -179,7 +179,6 @@
     "themes/dream/assets/images/default4.jpg",
     "themes/dream/assets/images/default3.jpg",
     "themes/dream/assets/images/default2.jpg",
-    "themes/dream/assets/images/default1.jpg",
     "themes/dream/archetypes/posts.md",
     "themes/dream/archetypes/about.md",
     "themes/dream/README.md",
