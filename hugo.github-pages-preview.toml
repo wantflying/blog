@@ -61,7 +61,7 @@ stickyNav = true
 # reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
 collapseNavItems = ["posts", "categories", "tags"]
 showTableOfContents = true
-showSummaryCoverInPost = true
+showSummaryCoverInPost = false
 showPrevNextPost = true
 # hasTwitterEmbed = true
 
