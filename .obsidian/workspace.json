@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/ebpf资源导航/eBPF资源导航.md",
+                "file": "content/posts/xdplabs/XDP实验.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/ebpf资源导航/eBPF资源导航.md",
+                "file": "content/posts/xdplabs/XDP实验.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/ebpf资源导航/eBPF资源导航.md",
+                "file": "content/posts/xdplabs/XDP实验.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/ebpf资源导航/eBPF资源导航.md"
+                "file": "content/posts/xdplabs/XDP实验.md"
               }
             }
           }
@@ -148,9 +148,14 @@
   },
   "active": "ebf9fdc8784bf1e8",
   "lastOpenFiles": [
+    "static/img/xdp1.png",
+    "static/img/202409041934909.png",
+    "static/img/202409041933669.png",
+    "content/posts/ebpf资源导航/eBPF导航.md",
+    "content/posts/xdplabs/XDP实验.md",
+    "content/posts/xdplabs",
     "static/img/ebpf.png",
     "content/posts/2024y8m21day18h35m54s/2024y8m21day18h35m54s.md",
-    "content/posts/ebpf资源导航/eBPF资源导航.md",
     "content/posts/ebpf资源导航",
     "static/img/vxlan1.png",
     "content/posts/2024y8m21day20h36m35s/2024y8m21day20h36m35s.md",
@@ -165,13 +170,9 @@
     "public/tags/网络",
     "public/tags/linux/page/1/index.html",
     "public/tags/linux/page/1",
-    "public/tags/linux/index.xml",
     "public/img/vethpair-4.png",
     "public/img/vethpair-1.png",
     "public/img/vethpair-2.png",
-    "public/img/vethpair-3.png",
-    "public/img/cat.JPG",
-    "static/img/cat.JPG",
     "content/posts/Linux命令/index.md",
     "themes/dream/docs/pages/search.md",
     "themes/dream/docs/pages/post-page.md",
@@ -192,7 +193,6 @@
     "archetypes/default.md",
     "archetypes/posts.md",
     "content/posts/2024y8m21d14h51m13s/2024y8m21d14h51m13s.md",
-    "README.md",
-    "content/posts/2024m8d21h14m49s47/2024m8d21h14m49s47.md"
+    "README.md"
   ]
 }

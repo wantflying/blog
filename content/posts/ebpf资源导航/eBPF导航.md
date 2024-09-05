@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-ebpf实验环境搭建，需要**良好的网络质量**
+ebpf实验环境搭建，需要**良好的网络质量**，以及bpftool使用
 
 <!--more-->
 
@@ -36,4 +36,43 @@ limactl start learning-ebpf.yaml
 limactl shell learning-ebpf
 
 #执行案例python文件 测试环境
+```
+
+### bpftool常见操作
+```
+#查看当前所有的bpf程序
+bpftool prog list
+#查看bpf 字节码
+bpftool prog dump xlated name  hello
+#查看bpf汇编代码
+bpftool prog dump jited name  hello
+
+#为hello bpf程序添加事件
+bpftool net attach xdp id 113 dev eth0
+bpftool net list
+#查看hello程序输出
+cat /sys/kernel/debug/tracing/trace_pipe
+或者
+bpftool prog tracelog
+
+#查看bpf map
+bpftool map list
+bpftool map dump name hello.bss
+
+#取消程序事件绑定，并卸载程序
+bpftool net detach xdp dev eth0
+rm /sys/fs/bpf/heloo
+
+```
+
+### 专业名称
+- ELF
+	ELF全称是Executable and Linkable Format，意思就是说它是一种可执行文件的文件格式，可以代表一些x86服务器二进制文件、可执行文件、对象代码等
+
+
+### XDP-LAB
+```
+
+git submodule add https://github.com/libbpf/libbpf/ lib/libbpf
+git submodule add https://github.com/xdp-project/xdp-tools/ lib/xdp-tools
 ```
