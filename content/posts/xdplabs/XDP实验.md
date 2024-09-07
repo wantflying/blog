@@ -4,25 +4,24 @@ date: 2024-09-04T19:31:06+08:00
 lastmod: 2024-09-04T19:31:06+08:00
 author: wantflying
 authorlink: https://github.com/wantflying
-cover: img/xdp1.png
+cover: img/xdp2.png
 categories:
   - eBPF
 tags:
   - xdp
   - ebpf
-draft: true
+draft: false
 ---
 
-本实验基于 xdp 官方 demo 学习参考使用，仅作个人记录学习使用。
-xdp 实践：
+本实验基于 xdp 官方 demo 学习理解参考使用，仅作个人记录学习使用。
 
 <!--more-->
 
 ### 实验环境搭建
+本实验基于xdp官方demo 学习参考使用，仅作个人记录学习使用
 
-```
-#本实验基于xdp官方demo 学习参考使用，仅作个人记录学习使用
-git clone https://github.com/wantflying/xdp-labs
+```shell
+git clone https://github.com/xdp-project/xdp-tutorial/tree/master
 #检查实验环境是否符合条件
 ./configure
 #编译libbpf libxdp
@@ -36,7 +35,7 @@ make install
 
 ### xdp 程序构建、部署、卸载示例
 
-```
+```shell
 #进入basic01 编译文件，epf程序包含两个部分，用户空间程序以及内核空间程序
 cd basic01
 make
@@ -69,19 +68,43 @@ lo                     xdp_prog_simple   skb      105  3b185187f1855c4c
 ```
 ---
 ### eBPF持久化机制-Map
-- **类型**
+- **类型** <br>
 BPF_MAP_TYPE_ARRAY
 BPF_MAP_TYPE_PERCPU_ARRAY
-- **Pinning机制实现Map共享**
+- **Pinning机制实现Map共享** <br>
 Pinning机制对于eBPF程序来说没有区别，map创建使用其实还是跟之前一样，在内存中创建好map之后，如果load和查看都是在一个程序，那根据bpf程序直接直接拿到map的fd，如果不在那就在eBPF程序load之后，在目录上挂载一个目录指向这个map，这样其他程序也可以根据这个path，拿到这个map的fd。
 有一点要注意就是如果eBPF程序卸载之后又去load，然后load新生成的map，会重新pinning，这个个用户空间查看程序拿的还是之前的eBPF对应的Map的fd，因此就两种思路：一种查看程序每次取数据时候，查看mapid是否变化，如果有，说明需要重新启动查看程序，然后复用。另外一种就是eBPF程序不生成新的map，而是使用旧的map
-```
+```shell
 #这里我们其实可以看到bpf已经被挂载，是因为我们之前使用iproute挂载xdp自动创建
 #如果没有这个，我们可以手动创建mount -t bpf bpf /sys/fs/bpf/
 #到这里我其实也可以猜到这种共享是基于什么原理了,基于文件描述符实现信息共享：
 root@lima-ebpfvm:/# mount |grep bpf
 bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
 
+#循环查看mapid，如果变更重新获取
+while (1) {
+		prev = record; /* struct copy */
+
+		map_fd = open_bpf_map_file(pin_dir, "xdp_stats_map", &info);
+		if (map_fd < 0) {
+			return EXIT_FAIL_BPF;
+		} else if (id != info.id) {
+			printf("BPF map xdp_stats_map changed its ID, restarting\n");
+			close(map_fd);
+			return 0;
+		}
+
+		stats_collect(map_fd, map_type, &record);
+		stats_print(&record, &prev);
+		close(map_fd);
+		sleep(interval);
+	}
+#load ebpf时不生成新的map，需要在open 和 load之间处理一下
+obj = open_bpf_object(file, ifindex);  
+......
+err = bpf_map__reuse_fd(map, pinned_map_fd);
+......
+err = bpf_object__load(obj);
 ```
 
 

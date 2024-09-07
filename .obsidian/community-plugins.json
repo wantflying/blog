@@ -3,5 +3,6 @@
   "obsidian-git",
   "obsidian-emoji-toolbar",
   "obsidian-pangu",
-  "obsidian-image-auto-upload-plugin"
+  "obsidian-image-auto-upload-plugin",
+  "hugo-preview-obsidian"
 ]

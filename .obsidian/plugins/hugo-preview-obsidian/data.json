@@ -1,0 +1,6 @@
+{
+  "hugoCommandPath": "/opt/homebrew/bin/hugo",
+  "hugoServerFlags": "--navigateToChanged",
+  "port": "1313",
+  "command": ""
+}
