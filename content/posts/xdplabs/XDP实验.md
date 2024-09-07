@@ -67,3 +67,21 @@ lo                     xdp_prog_simple   skb      105  3b185187f1855c4c
 ./xdp_pass_user --dev lo
 ./xdp_pass_user --dev lo --unload-all
 ```
+---
+### eBPF持久化机制-Map
+- **类型**
+BPF_MAP_TYPE_ARRAY
+BPF_MAP_TYPE_PERCPU_ARRAY
+- **Pinning机制实现Map共享**
+Pinning机制对于eBPF程序来说没有区别，map创建使用其实还是跟之前一样，在内存中创建好map之后，如果load和查看都是在一个程序，那根据bpf程序直接直接拿到map的fd，如果不在那就在eBPF程序load之后，在目录上挂载一个目录指向这个map，这样其他程序也可以根据这个path，拿到这个map的fd。
+有一点要注意就是如果eBPF程序卸载之后又去load，然后load新生成的map，会重新pinning，这个个用户空间查看程序拿的还是之前的eBPF对应的Map的fd，因此就两种思路：一种查看程序每次取数据时候，查看mapid是否变化，如果有，说明需要重新启动查看程序，然后复用。另外一种就是eBPF程序不生成新的map，而是使用旧的map
+```
+#这里我们其实可以看到bpf已经被挂载，是因为我们之前使用iproute挂载xdp自动创建
+#如果没有这个，我们可以手动创建mount -t bpf bpf /sys/fs/bpf/
+#到这里我其实也可以猜到这种共享是基于什么原理了,基于文件描述符实现信息共享：
+root@lima-ebpfvm:/# mount |grep bpf
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+
+```
+
+
