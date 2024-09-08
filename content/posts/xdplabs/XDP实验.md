@@ -107,4 +107,43 @@ err = bpf_map__reuse_fd(map, pinned_map_fd);
 err = bpf_object__load(obj);
 ```
 
+---
+### 数据包处理
+#### 数据包格式
+- 数据包结构以及返回码
+```c
+struct xdp_md {
+	__u32 data;/*数据包开始指针*/
+	__u32 data_end;/*数据包结束指针，用来校验数据包格式，越界检查*/
+	__u32 data_meta;/*xdp程序附带的元数据起始地址*/
+	/* Below access go through struct xdp_rxq_info */
+	__u32 ingress_ifindex; /* rxq->dev->ifindex 数据包设备id*/
+	__u32 rx_queue_index;  /* rxq->queue_index  数据包队列索引*/
+};
 
+/*程序返回代码*/
+enum xdp_action {
+	XDP_ABORTED = 0,/*数据包丢弃，产生一个丢弃的tracepoint事件：xdp：xdp-exception*/
+	XDP_DROP,/*数据包直接丢弃*/
+	XDP_PASS,/*数据包正常传递内核网络协议栈*/
+	XDP_TX,/*丢回原本接口重新传输数据包*/
+	XDP_REDIRECT,/*数据包重定向到其他网卡*/
+};
+/*数据包头定义以及顺序*/
+
+| 结构体           | 头文件 |
+| ---             | --- |
+| struct ethhdr   |  <linux/if_ether.h>|
+| struct ipv6hdr  |  <linux/ipv6.h>   |
+| struct iphdr    |  <linux/ip.h>   |
+| struct icmp6hdr |  <linux/icmpv6.h> |
+| struct icmphdr  |  <linux/icmp.h>   |
+
+
+```
+- 函数内联和循环标记
+```c
+__always_inline
+
+#pragma unroll
+```
