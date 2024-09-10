@@ -29,6 +29,11 @@ make
 #将编译后的文件install 到system wide
 cd xdp-labs/lib/xdp-tools/
 make install
+#实验网络脚本设置
+../testenv/testenv.sh alias
+alias t='/Users/beifeng/ebpf-demo/xdp-tutorial/testenv/testenv.sh'
+../testenv/testenv.sh setup --name env1
+
 ```
 
 ---
@@ -146,4 +151,68 @@ enum xdp_action {
 __always_inline
 
 #pragma unroll
+```
+- 常用代码或函数
+```c
+/*ebpf 打印日志  cat /sys/kernel/debug/tracing/trace_pipe */
+bpf_trace_printk("execve called with %s\n", (char *)ctx->args[0]);
+
+```
+#### ICMPV6报文解析
+1. icmpv6报文分析以及xdp执行过程分析
+我们可以使用官方提供的testenv工具创建一个veth pair对，一端名称叫作env1放在根namespace，另外一端放在命名空间下。本次实验目的就是ping ipv6地址，就会发送ipv6报文，然后丢弃这个数据报文，并记录packets数量。我们xdp程序是在网络协议栈外面的，所以他的影响范围其实就是两个方向：**其他主机或者namespace请求过来的流量，或者本机器出去到其他节点或者namespace流量**，也就是说同主机同namespace流量并不会触发xdp程序。
+2. 具体步骤
+```c
+/*当前环境 fc00:dead:cafe:1::1在根namepace，fc00:dead:cafe:1::2在env1 namesapce
+root@lima-ebpfvm:packet01-parsing# t status
+Currently selected environment: env1
+  Namespace:      env1 (id: 0)
+  Prefix:         fc00:dead:cafe:1::/64
+  Iface:          env1@if2 UP fc00:dead:cafe:1::1/64 fe80::98ae:42ff:fe98:c746/64 
+
+All existing environments:
+  env1
+  */
+//icmpv6 可以理解组成部分 eth头+ipv6头+icmpv6头+数据
+static __always_inline int parse_ethhdr(struct hdr_cursor *nh,
+void *data_end,
+struct ethhdr **ethhdr)
+
+{
+//计算eth头大小
+int ethhdrsize =sizeof(**ethhdr);
+//查看结束指针是否超过范围，超过则直接交给协议栈处理，说明不是ipv6报文
+if(nh->pos + ethhdrsize > data_end){
+return -1;
+}
+//更新ethhdr指针，更新nh指针，nh代表当前报文处理到哪个位置
+*ethhdr = nh->pos;
+nh->pos += ethhdrsize;
+//返回下一层协议，用来处理上层IP层报文
+return (*ethhdr)->h_proto; /* network-byte-order */
+}
+//同理ip报文也是类似处理，解析来进行验证，理论上在根namespace是可以ping通veth1，但是env1
+//另外一端ping不通，因为前者不经过xdp程序，后者经过xdp程序
+//可以正常ping
+root@lima-ebpfvm:packet01-parsing# ping fc00:dead:cafe:1::1
+PING fc00:dead:cafe:1::1(fc00:dead:cafe:1::1) 56 data bytes
+64 bytes from fc00:dead:cafe:1::1: icmp_seq=1 ttl=64 time=0.248 ms
+64 bytes from fc00:dead:cafe:1::1: icmp_seq=2 ttl=64 time=1.47 ms
+//无法ping通，同时可以看到xdp——status收集到报文
+root@lima-ebpfvm:packet01-parsing# ip netns exec  env1 ping fc00:dead:cafe:1::1
+PING fc00:dead:cafe:1::1(fc00:dead:cafe:1::1) 56 data bytes
+^C
+--- fc00:dead:cafe:1::1 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1032ms
+
+root@lima-ebpfvm:packet01-parsing# ./xdp_stats --dev env1
+
+Collecting stats from BPF map
+ - BPF map (bpf_map_type:6) id:8 name:xdp_stats_map key_size:4 value_size:16 max_entries:5
+XDP-action  
+XDP_ABORTED            0 pkts (         0 pps)           0 Kbytes (     0 Mbits/s) period:2.009177
+XDP_DROP               2 pkts (         1 pps)           0 Kbytes (     0 Mbits/s) period:2.009130
+XDP_PASS               0 pkts (         0 pps)           0 Kbytes (     0 Mbits/s) period:2.009119
+XDP_TX                 0 pkts (         0 pps)           0 Kbytes (     0 Mbits/s) period:2.009112
+XDP_REDIRECT           0 pkts (         0 pps)           0 Kbytes (     0 Mbits/s) period:2.009105
 ```
