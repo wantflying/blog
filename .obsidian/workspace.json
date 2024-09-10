@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/xdplabs/XDP实验.md",
+                "file": "content/about/open-source.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/xdplabs/XDP实验.md",
+                "file": "content/about/open-source.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/xdplabs/XDP实验.md",
+                "file": "content/about/open-source.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/xdplabs/XDP实验.md"
+                "file": "content/about/open-source.md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "d68960a400843ef0",
   "lastOpenFiles": [
+    "content/about/sponsor-me.md",
+    "content/about/me.md",
+    "content/posts/xdplabs/XDP实验.md",
     "content/posts/k8s网络打鱼篇一/2024y8m21day18h35m54s.md",
     "public/posts/k8s网络打鱼篇一/2024y8m21day18h35m54s/index.html",
     "public/posts/k8s网络打鱼篇一/2024y8m21day18h35m54s",
@@ -156,7 +159,6 @@
     "public/posts/k8s常用命令/2024y8m21day20h36m35s/index.html",
     "public/posts/k8s常用命令/2024y8m21day20h36m35s",
     "public/posts/k8s常用命令",
-    "content/posts/xdplabs/XDP实验.md",
     "public/img/xdp2.png",
     "static/img/xdp2.png",
     "archetypes/posts.md",
@@ -191,7 +193,6 @@
     "content/posts/2024y8m21day15h38m1s/2024y8m21day15h38m1s.md",
     "content/posts/2024y8m21day15h36m47s/2024y8m21day15h36m47s.md",
     "archetypes/default.md",
-    "content/posts/2024y8m21d14h51m13s/2024y8m21d14h51m13s.md",
-    "README.md"
+    "content/posts/2024y8m21d14h51m13s/2024y8m21d14h51m13s.md"
   ]
 }

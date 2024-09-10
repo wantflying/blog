@@ -113,7 +113,7 @@ err = bpf_object__load(obj);
 ```
 
 ---
-### 数据包处理
+### 数据包解析
 #### 数据包格式
 - 数据包结构以及返回码
 ```c
@@ -152,11 +152,18 @@ __always_inline
 
 #pragma unroll
 ```
-- 常用代码或函数
+- 常用代码或函数或者脚本
 ```c
 /*ebpf 打印日志  cat /sys/kernel/debug/tracing/trace_pipe */
+bpf_printk("Received packet with protocol: %u\n", bpf_ntohs((*ethhdr)->h_proto));
 bpf_trace_printk("execve called with %s\n", (char *)ctx->args[0]);
 
+make
+./xdp-loader unload --all env1
+./xdp-loader load env1 xdp_prog_kern.o -p /sys/fs/bpf/env1
+cat /sys/kernel/debug/tracing/trace_pipe
+
+ip netns exec  env1 ping fc00:dead:cafe:1::1
 ```
 #### ICMPV6报文解析
 1. icmpv6报文分析以及xdp执行过程分析
