@@ -223,3 +223,54 @@ XDP_PASS               0 pkts (         0 pps)           0 Kbytes (     0 Mbits/
 XDP_TX                 0 pkts (         0 pps)           0 Kbytes (     0 Mbits/s) period:2.009112
 XDP_REDIRECT           0 pkts (         0 pps)           0 Kbytes (     0 Mbits/s) period:2.009105
 ```
+### 数据报文修改
+报文修改主要是在解析基础上修改header部分数据，当我们修改报文的实话，需要对报文校验和进行重新计算，否则会被视为失效报文，下面代码案例是修改tcp端口和udp端口减少1
+```c
+//解析ip头或者ipv6头，获取传输层协议
+nh_type = parse_ip6hdr(&nh, data_end, &ip6h);
+
+/*
+如果传输层协议是udp
+*/
+if (nh_type == IPPROTO_UDP){
+//解析udp头部，校验数据是否合法
+if (parse_udphdr(&nh, data_end, &udphdr) < 0) {
+action = XDP_ABORTED;
+//不合法，则直接丢弃
+goto out;
+}
+//这里对端口减少1时，要注意网络序和主机序转换
+udphdr->dest = bpf_htons(bpf_ntohs(udphdr->dest) - 1);
+//校验和+1
+udphdr->check += bpf_htons(1);
+//校验和采用无符号整数+1后可能溢出为0，要保证该位置不能为0，非则会被视为无效报文
+if (!udphdr->check)
+udphdr->check += bpf_htons(1);
+
+/*
+如果传输层协议是tcp
+*/
+}else if(nh_type == IPPROTO_TCP){
+//和前面类似，校验tcp报文是否合法
+if(parse_tcphdr(&nh, data_end, &tcphdr) < 0) {
+action = XDP_ABORTED;
+goto out;
+
+}
+//目的端口需要转成主机序列，然后+1，然后再转成网络序列，校验和也要+1，同时需要保证校验和大于0
+tcphdr->dest = bpf_htons(bpf_ntohs(tcphdr->dest) - 1);
+tcphdr->check += bpf_htons(1);
+if (!tcphdr->check)
+tcphdr->check += bpf_htons(1);
+}
+```
+接下来我们可以通过tcpdump命令进行抓包，查看数据包是否被修改成功：
+```shell
+#以下是shell面板输出，已经对部分内容精简
+root@lima-ebpfvm:packet02-rewriting# tcpdump -i test
+20:03:19.813599 IP6 fc00:dead:cafe:1::2.59950 > fc00:dead:cafe:1::1.1999: Flags [S], seq 2929936718, win 64800, options [mss 1440,sackOK,TS val 1699925142 ecr 0,nop,wscale 7], length 0
+20:03:20.833516 IP6 fc00:dead:cafe:1::1.1999 > fc00:dead:cafe:1::2.59950: Flags [R.], seq 0, ack 1, win 0, length 0
+20:04:19.763665 IP6 fc00:dead:cafe:1::2.41692 > fc00:dead:cafe:1::1.1999: UDP, length 1
+20:04:19.764252 IP6 fc00:dead:cafe:1::1 > fc00:dead:cafe:1::2: ICMP6, destination unreachable, unreachable port, fc00:dead:cafe:1::1 udp port 1999, length 57
+^C
+```

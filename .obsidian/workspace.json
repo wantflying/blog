@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about/open-source.md",
+                "file": "content/posts/xdplabs/XDP实验.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/about/open-source.md",
+                "file": "content/posts/xdplabs/XDP实验.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/about/open-source.md",
+                "file": "content/posts/xdplabs/XDP实验.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/about/open-source.md"
+                "file": "content/posts/xdplabs/XDP实验.md"
               }
             }
           }
@@ -148,33 +148,35 @@
   },
   "active": "d68960a400843ef0",
   "lastOpenFiles": [
+    "content/posts/ebpf资源导航/eBPF导航.md",
+    "content/posts/问题1/2024y9m12day9h17m12s.md",
+    "public/img/bigdata.png",
+    "public/img/big.png",
+    "static/img/bigdata.png",
+    "static/img/big.png",
+    "public/tags/排错/page/1/index.html",
+    "public/tags/排错/page/1",
+    "public/tags/排错/page",
+    "public/tags/排错/index.xml",
+    "public/tags/排错/index.html",
+    "public/tags/排错",
+    "public/tags/hive/page/1/index.html",
+    "public/tags/hive/page/1",
+    "public/tags/hive/page",
+    "public/tags/hive/index.xml",
+    "content/posts/xdplabs/XDP实验.md",
+    "content/about/open-source.md",
     "content/about/sponsor-me.md",
     "content/about/me.md",
-    "content/posts/xdplabs/XDP实验.md",
     "content/posts/k8s网络打鱼篇一/2024y8m21day18h35m54s.md",
-    "public/posts/k8s网络打鱼篇一/2024y8m21day18h35m54s/index.html",
-    "public/posts/k8s网络打鱼篇一/2024y8m21day18h35m54s",
-    "public/posts/k8s网络打鱼篇一",
     "content/posts/k8s常用命令/2024y8m21day20h36m35s.md",
-    "public/posts/k8s常用命令/2024y8m21day20h36m35s/index.html",
-    "public/posts/k8s常用命令/2024y8m21day20h36m35s",
-    "public/posts/k8s常用命令",
     "public/img/xdp2.png",
     "static/img/xdp2.png",
     "archetypes/posts.md",
-    "public/tags/资源/page/1/index.html",
-    "public/tags/资源/page/1",
-    "public/tags/资源/page",
-    "public/tags/资源/index.xml",
     "public/img/ebpf.png",
     "public/img/202409041933669.png",
     "public/img/202409041934909.png",
     "public/img/xdp1.png",
-    "static/img/xdp1.png",
-    "static/img/202409041934909.png",
-    "static/img/202409041933669.png",
-    "content/posts/ebpf资源导航/eBPF导航.md",
-    "static/img/ebpf.png",
     "content/posts/Linux命令/index.md",
     "themes/dream/docs/pages/search.md",
     "themes/dream/docs/pages/post-page.md",
@@ -190,9 +192,6 @@
     "content/posts/2024y8m21day15h44m36s/2022222.md",
     "content/posts/2024y8m21day15h44m36s/2024y8m21day15h44m36s.md",
     "content/posts/2024y8m21day15h44m36s/index.md",
-    "content/posts/2024y8m21day15h38m1s/2024y8m21day15h38m1s.md",
-    "content/posts/2024y8m21day15h36m47s/2024y8m21day15h36m47s.md",
-    "archetypes/default.md",
-    "content/posts/2024y8m21d14h51m13s/2024y8m21d14h51m13s.md"
+    "content/posts/2024y8m21day15h38m1s/2024y8m21day15h38m1s.md"
   ]
 }

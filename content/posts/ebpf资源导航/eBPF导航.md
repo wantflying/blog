@@ -22,6 +22,7 @@ ebpf实验环境搭建，需要**良好的网络质量**，以及bpftool使用
 - https://github.com/lizrice/learning-ebpf learing-ebpf书籍配套案例学习
 - https://isovalent.com/books/learning-ebpf/#form  可以获取《learning ebpf》 pdf副本，填写邮箱即可
 - https://isovalent.com/resource-library/labs/   cilimu 线上实操实验
+- https://github.com/eunomia-bpf/bpf-developer-tutorial/blob/main/README.zh.md  案例demo学习
 ---
 ### 环境安装
 ```
