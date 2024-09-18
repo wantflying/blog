@@ -1,4 +1,4 @@
-baseURL = "https://wantflying.github.io"
+baseURL = "https://yxs.one"
 defaultContentLanguage = "zh"
 languageCode = "zh-Hans"
 title = "yuan 的博客"
@@ -9,11 +9,11 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
-[services]
-[services.disqus]
-shortname = "wantflying-github-io"
-[services.googleAnalytics]
-ID = "G-K6V0YY3HWS"
+# [services]
+# [services.disqus]
+# shortname = "yuan"
+# [services.googleAnalytics]
+# ID = "G-K6V0YY3HWS"
 
 [markup]
 [markup.goldmark.renderer]
@@ -21,14 +21,7 @@ unsafe = true
 [markup.highlight]
 noClasses = false
 
-# [taxonomies]
-# category = "categories"
-# tag = "tags"
-# series = "series"
-
 [params]
-# zenMode = true
-
 lightTheme = "emerald"
 darkTheme = "forest"
 
@@ -41,13 +34,13 @@ author = "yuan"
 description = "The life record of yuan is presented here."
 avatar = "me/yy.jpg"
 headerTitle = "yuan 的博客"
-motto = "命运早已注定,你我都是牛马"
+motto = "拒绝玄学编程🙅‍♂️"
 
 # footerBottomText = ""
 
 rss = false
 
-utterancesRepo = "wantflying/wantflying.github.io"
+# utterancesRepo = "yuan/yuan.github.io"
 
 # valine = true
 # LEANCLOUD_APP_ID = ""
@@ -65,18 +58,14 @@ customSyntaxHighlighting = true
 
 # options
 stickyNav = true
-reorderNavItems = ["search", "github", "posts", "categories", "tags", "rss"]
-collapseNavItems = ["posts", "categories", "tags", "rss"]
+# reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
+collapseNavItems = ["posts", "categories", "tags"]
 showTableOfContents = true
 showSummaryCoverInPost = true
 showPrevNextPost = true
 # hasTwitterEmbed = true
 
-[params.busuanzi]
-enable = true
-
 [params.navItems]
-github = { href = "https://github.com/wantflying", target = "_blank", icon = "logo-github", title = "GitHub" }
 
 [params.advanced]
 customCSS = ["css/custom.css"]
