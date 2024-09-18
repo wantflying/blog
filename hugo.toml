@@ -9,6 +9,9 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
+[services]
+  [services.disqus]
+    shortname = 'wantflying-github-io'
 # [services]
 # [services.disqus]
 # shortname = "yuan"
