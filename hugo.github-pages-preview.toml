@@ -1,4 +1,4 @@
-baseURL = "https://wantflying.github.io/blog"
+baseURL = "https://wantflying.github.io"
 defaultContentLanguage = "zh"
 languageCode = "zh-Hans"
 title = "yuan's Blog"
