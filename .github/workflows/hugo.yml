@@ -53,6 +53,7 @@ jobs:
         run: |
           hugo \
             -e production \
+            --baseURL localhost \
             --cleanDestinationDir \
             --gc \
             --minify \
