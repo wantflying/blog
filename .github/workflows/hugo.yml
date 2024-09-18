@@ -53,11 +53,10 @@ jobs:
         run: |
           hugo \
             -e production \
-            --baseURL localhost \
             --cleanDestinationDir \
             --gc \
             --minify \
-            --config hugo.github-pages-preview.toml
+            --config hugo.toml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
