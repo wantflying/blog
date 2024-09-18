@@ -56,7 +56,8 @@ jobs:
             --cleanDestinationDir \
             --gc \
             --minify \
-            --config hugo.toml
+            --config hugo.github-pges-preview.toml
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
