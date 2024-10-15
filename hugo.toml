@@ -38,7 +38,7 @@ motto = "拒绝玄学编程🙅‍♂️"
 
 # footerBottomText = ""
 
-rss = false
+rss = true
 
 # utterancesRepo = "yuan/yuan.github.io"
 
