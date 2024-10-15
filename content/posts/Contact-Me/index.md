@@ -20,9 +20,11 @@ weight: 1
 
 目前从事云原生、大数据、Devops相关工作与学习，我会在这里记录一些关于生活或者技术上的事情。欢迎你通过评论或者邮件与我交流。
 
+This message is used to verify that this feed (feedId:68851346291562496) belongs to me (userId:68814165301404672).
+
 <!--more-->
 
 If you like my works or find them helpful, please contact me .  🦾
-
-This message is used to verify that this feed (feedId:68851346291562496) belongs to me (userId:68814165301404672). Join me in enjoying the next generation information browser https://follow.is.
+This message is used to verify that this feed (feedId:68851346291562496) belongs to me (userId:68814165301404672).
+Join me in enjoying the next generation information browser [https://follow.is](https://app.follow.is/feed/68851346291562496?view=0).
 
