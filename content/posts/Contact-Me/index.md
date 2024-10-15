@@ -24,3 +24,5 @@ weight: 1
 
 If you like my works or find them helpful, please contact me .  🦾
 
+This message is used to verify that this feed (feedId:68851346291562496) belongs to me (userId:68814165301404672). Join me in enjoying the next generation information browser https://follow.is.
+
